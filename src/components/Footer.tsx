@@ -1,12 +1,12 @@
 
 import { Link } from "react-router-dom";
-import { Dumbbell, Heart, Mail, Phone, MapPin } from "lucide-react";
+import { Dumbbell, Heart } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
@@ -60,25 +60,6 @@ const Footer = () => {
                   {category}
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-purple-400">Contact</h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Mail className="w-5 h-5 text-purple-400" />
-                <span>hello@fitlifeindia.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <Phone className="w-5 h-5 text-purple-400" />
-                <span>+91 98765 43210</span>
-              </div>
-              <div className="flex items-center space-x-3 text-gray-300">
-                <MapPin className="w-5 h-5 text-purple-400" />
-                <span>Mumbai, India</span>
-              </div>
             </div>
           </div>
         </div>

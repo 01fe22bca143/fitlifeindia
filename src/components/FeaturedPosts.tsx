@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Clock, User, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const featuredPosts = [
   {
@@ -97,13 +98,15 @@ const FeaturedPosts = () => {
                     </div>
                   </div>
                   
-                  <Button 
-                    variant="ghost" 
-                    className="w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-pink-500 group-hover:text-white transition-all duration-300"
-                  >
-                    Read More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link to={`/blog/${post.id}`}>
+                    <Button 
+                      variant="ghost" 
+                      className="w-full group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-pink-500 group-hover:text-white transition-all duration-300"
+                    >
+                      Read More
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
@@ -116,13 +119,15 @@ const FeaturedPosts = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <Button 
-            size="lg"
-            variant="outline"
-            className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-6 text-lg font-semibold rounded-full"
-          >
-            View All Articles
-          </Button>
+          <Link to="/blog">
+            <Button 
+              size="lg"
+              variant="outline"
+              className="border-2 border-purple-300 text-purple-700 hover:bg-purple-50 px-8 py-6 text-lg font-semibold rounded-full"
+            >
+              View All Articles
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
