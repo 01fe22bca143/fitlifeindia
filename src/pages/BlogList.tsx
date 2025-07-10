@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,60 +12,60 @@ const blogPosts = [
   {
     id: 1,
     title: "10 Budget-Friendly Protein Sources Every Indian Should Know",
-    excerpt: "Discover affordable protein options that won't break your bank while building muscle effectively. From dal to paneer alternatives.",
+    excerpt: "Discover the complete guide to affordable protein options that will revolutionize your health without breaking your bank. From dal to innovative combinations.",
     image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
     category: "Nutrition",
-    readTime: "5 min read",
+    readTime: "8 min read",
     author: "Priya Sharma",
     date: "Dec 8, 2024"
   },
   {
     id: 2,
     title: "Home Workout Routine: No Gym, No Problem",
-    excerpt: "Complete bodyweight workout routine you can do in your small apartment with zero equipment. Perfect for busy students and professionals.",
+    excerpt: "Complete 4-week transformation program you can do in your small apartment with zero equipment. Scientifically designed for maximum results.",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
-    readTime: "8 min read",
+    readTime: "12 min read",
     author: "Arjun Patel",
     date: "Dec 7, 2024"
   },
   {
     id: 3,
     title: "Healthy Indian Breakfast Ideas Under ₹50",
-    excerpt: "Start your day right with these nutritious and delicious breakfast options that cost less than ₹50 and take under 15 minutes to make.",
+    excerpt: "15 power-packed breakfast recipes that will energize your mornings and save you thousands monthly. Complete with weekly meal plans.",
     image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop",
     category: "Recipes",
-    readTime: "6 min read",
+    readTime: "10 min read",
     author: "Meera Singh",
     date: "Dec 6, 2024"
   },
   {
     id: 4,
-    title: "Mental Health and Fitness: The Indian Perspective",
-    excerpt: "How traditional Indian practices like yoga and meditation can boost your mental health while staying physically fit.",
+    title: "Mental Health and Fitness: The Indian Wellness Revolution",
+    excerpt: "Ancient Indian practices meet modern science for complete wellness. Discover the 5-pillar system that's transforming lives across India.",
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop",
     category: "Wellness",
-    readTime: "7 min read",
+    readTime: "15 min read",
     author: "Dr. Rajesh Kumar",
     date: "Dec 5, 2024"
   },
   {
     id: 5,
     title: "Street Food Makeover: Healthy Versions of Indian Favorites",
-    excerpt: "Love chaat and samosas? Learn how to make healthier versions of your favorite street foods at home without losing the taste.",
+    excerpt: "Transform your favorite chaats and street foods into healthy powerhouses. 8 complete makeovers with 60% fewer calories but 100% authentic taste.",
     image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=250&fit=crop",
     category: "Recipes",
-    readTime: "9 min read",
+    readTime: "12 min read",
     author: "Chef Ananya",
     date: "Dec 4, 2024"
   },
   {
     id: 6,
     title: "Building Muscle on a Vegetarian Diet: Complete Guide",
-    excerpt: "Everything you need to know about gaining muscle mass while following a vegetarian lifestyle. Includes meal plans and supplement advice.",
+    excerpt: "Everything you need to know about gaining serious muscle mass while following a vegetarian lifestyle. Includes 7-day meal plans and supplement guide.",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
-    readTime: "12 min read",
+    readTime: "18 min read",
     author: "Fitness Coach Rohit",
     date: "Dec 3, 2024"
   }
@@ -85,6 +86,14 @@ const BlogList = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50 pt-20">
+      {/* FREE ACCESS Banner */}
+      <div className="max-w-7xl mx-auto px-4 py-4">
+        <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl p-4 text-center shadow-lg">
+          <p className="font-bold text-lg">🎉 ALL CONTENT FREE - No Signup Required! 🎉</p>
+          <p className="text-sm opacity-90">Premium quality fitness content, completely free for everyone!</p>
+        </div>
+      </div>
+
       {/* Header Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
@@ -171,6 +180,9 @@ const BlogList = () => {
                         {post.category}
                       </Badge>
                     </div>
+                    <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      FREE
+                    </div>
                   </div>
                   
                   <CardHeader className="pb-3">
@@ -200,7 +212,7 @@ const BlogList = () => {
                           size="sm"
                           className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white border-0 rounded-full px-6"
                         >
-                          Read More
+                          Read Free
                         </Button>
                       </Link>
                     </div>
