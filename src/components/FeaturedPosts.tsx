@@ -1,7 +1,8 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Clock, User, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -12,8 +13,7 @@ const featuredPosts = [
     excerpt: "Discover the complete guide to affordable protein options that will revolutionize your health without breaking your bank. From dal to innovative combinations.",
     image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
     category: "Nutrition",
-    readTime: "8 min read",
-    author: "Priya Sharma"
+    readTime: "8 min read"
   },
   {
     id: 2,
@@ -21,8 +21,7 @@ const featuredPosts = [
     excerpt: "Complete 4-week transformation program you can do in your small apartment with zero equipment. Scientifically designed for maximum results.",
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
-    readTime: "12 min read",
-    author: "Arjun Patel"
+    readTime: "12 min read"
   },
   {
     id: 3,
@@ -30,8 +29,7 @@ const featuredPosts = [
     excerpt: "15 power-packed breakfast recipes that will energize your mornings and save you thousands monthly. Complete with weekly meal plans.",
     image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=250&fit=crop",
     category: "Recipes",
-    readTime: "10 min read",
-    author: "Meera Singh"
+    readTime: "10 min read"
   }
 ];
 
@@ -92,11 +90,7 @@ const FeaturedPosts = () => {
                 <CardContent className="pt-0">
                   <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
                   
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center gap-2">
-                      <User className="w-4 h-4" />
-                      <span>{post.author}</span>
-                    </div>
+                  <div className="flex items-center justify-center text-sm text-gray-500 mb-4">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
                       <span>{post.readTime}</span>

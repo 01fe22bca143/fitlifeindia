@@ -16,7 +16,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=400&h=250&fit=crop",
     category: "Nutrition",
     readTime: "8 min read",
-    author: "Priya Sharma",
+    author: "Nutritionist Team",
     date: "Dec 8, 2024"
   },
   {
@@ -26,7 +26,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
     readTime: "12 min read",
-    author: "Arjun Patel",
+    author: "Fitness Team",
     date: "Dec 7, 2024"
   },
   {
@@ -36,7 +36,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=250&fit=crop",
     category: "Recipes",
     readTime: "10 min read",
-    author: "Meera Singh",
+    author: "Recipe Team",
     date: "Dec 6, 2024"
   },
   {
@@ -46,7 +46,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop",
     category: "Wellness",
     readTime: "15 min read",
-    author: "Dr. Rajesh Kumar",
+    author: "Wellness Team",
     date: "Dec 5, 2024"
   },
   {
@@ -56,7 +56,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=250&fit=crop",
     category: "Recipes",
     readTime: "12 min read",
-    author: "Chef Ananya",
+    author: "Recipe Team",
     date: "Dec 4, 2024"
   },
   {
@@ -66,7 +66,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
     readTime: "18 min read",
-    author: "Fitness Coach Rohit",
+    author: "Fitness Team",
     date: "Dec 3, 2024"
   },
   {
@@ -76,7 +76,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=250&fit=crop",
     category: "Recipes",
     readTime: "9 min read",
-    author: "Chef Kavya",
+    author: "Recipe Team",
     date: "Dec 2, 2024"
   },
   {
@@ -86,7 +86,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&h=250&fit=crop",
     category: "Wellness",
     readTime: "11 min read",
-    author: "Dr. Meera Patel",
+    author: "Wellness Team",
     date: "Dec 1, 2024"
   },
   {
@@ -96,7 +96,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop",
     category: "Weight Loss",
     readTime: "7 min read",
-    author: "Nutritionist Ravi",
+    author: "Wellness Team",
     date: "Nov 30, 2024"
   },
   {
@@ -106,7 +106,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
     readTime: "6 min read",
-    author: "Physiotherapist Sana",
+    author: "Fitness Team",
     date: "Nov 29, 2024"
   },
   {
@@ -116,7 +116,7 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop",
     category: "Nutrition",
     readTime: "13 min read",
-    author: "Ayurveda Expert Priya",
+    author: "Nutritionist Team",
     date: "Nov 28, 2024"
   },
   {
@@ -126,8 +126,171 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=250&fit=crop",
     category: "Recipes",
     readTime: "14 min read",
-    author: "Home Chef Anjali",
+    author: "Recipe Team",
     date: "Nov 27, 2024"
+  },
+  // 200 Healthy Recipes
+  {
+    id: 13,
+    title: "200 Healthy Indian Recipes Collection",
+    excerpt: "Complete collection of 200 nutritious Indian recipes for every meal. From traditional dal to modern fusion dishes, all budget-friendly and delicious.",
+    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "45 min read",
+    author: "Recipe Team",
+    date: "Nov 26, 2024"
+  },
+  {
+    id: 14,
+    title: "Breakfast Recipes: 50 Healthy Indian Morning Meals",
+    excerpt: "Start your day right with 50 nutritious breakfast recipes. From poha variations to healthy parathas, energize your mornings the Indian way.",
+    image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "25 min read",
+    author: "Recipe Team",
+    date: "Nov 25, 2024"
+  },
+  {
+    id: 15,
+    title: "Lunch Box Recipes: 40 Office-Friendly Meals",
+    excerpt: "Pack healthy, tasty lunches with these 40 office-friendly recipes. Keep your meals interesting and nutritious throughout the work week.",
+    image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "20 min read",
+    author: "Recipe Team",
+    date: "Nov 24, 2024"
+  },
+  {
+    id: 16,
+    title: "Dinner Delights: 50 Light Evening Meals",
+    excerpt: "End your day with these 50 light, healthy dinner recipes. Perfect for weight management and better sleep quality.",
+    image: "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "30 min read",
+    author: "Recipe Team",
+    date: "Nov 23, 2024"
+  },
+  {
+    id: 17,
+    title: "Snack Attack: 60 Healthy Indian Snacks",
+    excerpt: "Beat hunger pangs with 60 healthy snack recipes. From roasted chana to homemade energy bars, snack smart and stay energized.",
+    image: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "35 min read",
+    author: "Recipe Team",
+    date: "Nov 22, 2024"
+  },
+  // 50 Workout Plans
+  {
+    id: 18,
+    title: "50 Complete Workout Plans for Every Fitness Level",
+    excerpt: "Comprehensive collection of 50 workout plans. From beginner home routines to advanced strength training, find your perfect fitness match.",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "40 min read",
+    author: "Fitness Team",
+    date: "Nov 21, 2024"
+  },
+  {
+    id: 19,
+    title: "Beginner's Fitness Journey: 10 Starter Workout Plans",
+    excerpt: "Start your fitness journey with these 10 beginner-friendly workout plans. Build strength, endurance, and confidence from day one.",
+    image: "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "15 min read",
+    author: "Fitness Team",
+    date: "Nov 20, 2024"
+  },
+  {
+    id: 20,
+    title: "HIIT Workouts Collection: 15 High-Intensity Plans",
+    excerpt: "Burn maximum calories in minimum time with these 15 HIIT workout plans. Perfect for busy schedules and quick results.",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "18 min read",
+    author: "Fitness Team",
+    date: "Nov 19, 2024"
+  },
+  {
+    id: 21,
+    title: "Strength Training: 15 Muscle Building Programs",
+    excerpt: "Build serious muscle with these 15 strength training programs. Progressive overload techniques for maximum muscle growth.",
+    image: "https://images.unsplash.com/photo-1583500178690-f7b6616a266d?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "22 min read",
+    author: "Fitness Team",
+    date: "Nov 18, 2024"
+  },
+  {
+    id: 22,
+    title: "Yoga & Flexibility: 10 Complete Yoga Sequences",
+    excerpt: "Improve flexibility, balance, and mental well-being with these 10 complete yoga sequences designed for Indian practitioners.",
+    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "25 min read",
+    author: "Fitness Team",
+    date: "Nov 17, 2024"
+  },
+  // Additional diverse topics
+  {
+    id: 23,
+    title: "Seasonal Eating: Monsoon Health Guide",
+    excerpt: "Navigate monsoon season with this complete health guide. Boost immunity, prevent infections, and enjoy seasonal foods safely.",
+    image: "https://images.unsplash.com/photo-1519692933481-e162a57d6721?w=400&h=250&fit=crop",
+    category: "Wellness",
+    readTime: "12 min read",
+    author: "Wellness Team",
+    date: "Nov 16, 2024"
+  },
+  {
+    id: 24,
+    title: "Pregnancy Nutrition: Indian Diet for Expecting Mothers",
+    excerpt: "Complete nutrition guide for Indian expecting mothers. Traditional foods that support healthy pregnancy and baby development.",
+    image: "https://images.unsplash.com/photo-1586810849456-ae97477d3b24?w=400&h=250&fit=crop",
+    category: "Nutrition",
+    readTime: "20 min read",
+    author: "Nutritionist Team",
+    date: "Nov 15, 2024"
+  },
+  {
+    id: 25,
+    title: "Children's Nutrition: Healthy Eating for Indian Kids",
+    excerpt: "Ensure your children get proper nutrition with these child-friendly Indian recipes and feeding strategies for growing minds and bodies.",
+    image: "https://images.unsplash.com/photo-1514888916311-d843b43c08e8?w=400&h=250&fit=crop",
+    category: "Nutrition",
+    readTime: "16 min read",
+    author: "Nutritionist Team",
+    date: "Nov 14, 2024"
+  },
+  {
+    id: 26,
+    title: "Senior Fitness: Exercise Plans for Older Adults",
+    excerpt: "Safe, effective exercise plans designed specifically for senior citizens. Maintain mobility, strength, and independence with age.",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "14 min read",
+    author: "Fitness Team",
+    date: "Nov 13, 2024"
+  },
+  {
+    id: 27,
+    title: "Diabetes Management: Indian Diet & Exercise Guide",
+    excerpt: "Comprehensive guide to managing diabetes through traditional Indian foods and targeted exercises. Control blood sugar naturally.",
+    image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop",
+    category: "Wellness",
+    readTime: "18 min read",
+    author: "Wellness Team",
+    date: "Nov 12, 2024"
+  },
+  {
+    id: 28,
+    title: "Heart Health: Cardio-Friendly Indian Recipes",
+    excerpt: "Protect your heart with these cardio-friendly Indian recipes. Lower cholesterol and improve heart health with traditional ingredients.",
+    image: "https://images.unsplash.com/photo-1505576391880-b3f9d713dc4f?w=400&h=250&fit=crop",
+    category: "Nutrition",
+    readTime: "15 min read",
+    author: "Nutritionist Team",
+    date: "Nov 11, 2024"
   }
 ];
 
@@ -256,10 +419,6 @@ const BlogList = () => {
                     
                     <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                       <div className="flex items-center gap-2">
-                        <User className="w-4 h-4" />
-                        <span>{post.author}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
                         <Clock className="w-4 h-4" />
                         <span>{post.readTime}</span>
                       </div>
@@ -289,7 +448,7 @@ const BlogList = () => {
               className="text-center py-16"
             >
               <p className="text-xl text-gray-500">No articles found matching your search.</p>
-            </motion.div>
+            </div>
           )}
         </div>
       </section>

@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, MessageCircle, Clock } from "lucide-react";
+import { Send, MessageCircle, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -40,27 +40,6 @@ const Contact = () => {
       toast.error("Please fill in all required fields.");
     }
   };
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email Us",
-      content: "hello@fitlifeindia.com",
-      description: "Drop us a line anytime"
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      content: "+91 98765 43210",
-      description: "Mon-Fri from 9am to 6pm"
-    },
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      content: "Mumbai, Maharashtra",
-      description: "Come say hello"
-    }
-  ];
 
   const faqs = [
     {
@@ -189,37 +168,13 @@ const Contact = () => {
             </Card>
           </motion.div>
 
-          {/* Contact Info & FAQ */}
+          {/* FAQ & Response Time */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            {/* Contact Information */}
-            <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-md">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-gray-800 flex items-center gap-2">
-                  <MessageCircle className="w-6 h-6 text-orange-500" />
-                  Contact Information
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-3 rounded-xl">
-                      <info.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-gray-800">{info.title}</h3>
-                      <p className="text-gray-600 font-medium">{info.content}</p>
-                      <p className="text-sm text-gray-500">{info.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
             {/* Response Time */}
             <Card className="border-0 shadow-xl bg-gradient-to-r from-orange-500 to-pink-500 text-white">
               <CardContent className="p-6">

@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Search, Dumbbell } from "lucide-react";
 import { motion } from "framer-motion";
+import { toast } from "sonner";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,14 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleJoinFree = () => {
+    toast.success("Welcome to FitLife India! 🎉 You now have access to all our free content!");
+  };
+
+  const handleSearch = () => {
+    toast.info("Search feature coming soon! For now, visit our blog to explore all articles.");
+  };
 
   return (
     <motion.nav
@@ -66,12 +75,14 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               className="rounded-full hover:bg-orange-50"
+              onClick={handleSearch}
             >
               <Search className="w-5 h-5 text-gray-600" />
             </Button>
             <Button
               size="sm"
               className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white border-0 rounded-full px-6"
+              onClick={handleJoinFree}
             >
               Join Free
             </Button>
@@ -122,6 +133,7 @@ const Navbar = () => {
                   variant="ghost"
                   size="sm"
                   className="flex-1 rounded-full hover:bg-orange-50"
+                  onClick={handleSearch}
                 >
                   <Search className="w-5 h-5 mr-2" />
                   Search
@@ -129,6 +141,7 @@ const Navbar = () => {
                 <Button
                   size="sm"
                   className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white border-0 rounded-full"
+                  onClick={handleJoinFree}
                 >
                   Join Free
                 </Button>
