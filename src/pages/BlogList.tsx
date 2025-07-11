@@ -33,7 +33,7 @@ const blogPosts = [
     id: 3,
     title: "Healthy Indian Breakfast Ideas Under ₹50",
     excerpt: "15 power-packed breakfast recipes that will energize your mornings and save you thousands monthly. Complete with weekly meal plans.",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop",
+    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=250&fit=crop",
     category: "Recipes",
     readTime: "10 min read",
     author: "Meera Singh",
@@ -68,10 +68,70 @@ const blogPosts = [
     readTime: "18 min read",
     author: "Fitness Coach Rohit",
     date: "Dec 3, 2024"
+  },
+  {
+    id: 7,
+    title: "Student's Guide to 15-Minute Healthy Meals",
+    excerpt: "Quick, nutritious recipes perfect for college students and working professionals. Cook healthy meals in under 15 minutes with ingredients under ₹100.",
+    image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "9 min read",
+    author: "Chef Kavya",
+    date: "Dec 2, 2024"
+  },
+  {
+    id: 8,
+    title: "Sleep Better, Live Better: Indian Sleep Optimization",
+    excerpt: "Ancient Ayurvedic wisdom meets modern sleep science. Transform your sleep quality with traditional Indian practices and scientific techniques.",
+    image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=400&h=250&fit=crop",
+    category: "Wellness",
+    readTime: "11 min read",
+    author: "Dr. Meera Patel",
+    date: "Dec 1, 2024"
+  },
+  {
+    id: 9,
+    title: "Water Therapy: The Indian Way to Weight Loss",
+    excerpt: "Discover how proper hydration combined with traditional Indian water therapy can accelerate weight loss. Includes timing charts and flavor combinations.",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=250&fit=crop",
+    category: "Weight Loss",
+    readTime: "7 min read",
+    author: "Nutritionist Ravi",
+    date: "Nov 30, 2024"
+  },
+  {
+    id: 10,
+    title: "Desk Job Detox: 5-Minute Office Exercises",
+    excerpt: "Combat sitting disease with these discrete office exercises. Improve posture, reduce back pain, and boost energy without leaving your desk.",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
+    category: "Fitness",
+    readTime: "6 min read",
+    author: "Physiotherapist Sana",
+    date: "Nov 29, 2024"
+  },
+  {
+    id: 11,
+    title: "Indian Superfoods on a Shoestring Budget",
+    excerpt: "Discover 12 powerful Indian superfoods that cost less than ₹20 each. Boost immunity, energy, and health without expensive supplements.",
+    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=250&fit=crop",
+    category: "Nutrition",
+    readTime: "13 min read",
+    author: "Ayurveda Expert Priya",
+    date: "Nov 28, 2024"
+  },
+  {
+    id: 12,
+    title: "Stress-Free Cooking: One-Pot Indian Meals",
+    excerpt: "Master the art of one-pot cooking with these 10 nutritious Indian recipes. Save time, reduce dishes, and maintain authentic flavors.",
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=250&fit=crop",
+    category: "Recipes",
+    readTime: "14 min read",
+    author: "Home Chef Anjali",
+    date: "Nov 27, 2024"
   }
 ];
 
-const categories = ["All", "Nutrition", "Fitness", "Recipes", "Wellness"];
+const categories = ["All", "Nutrition", "Fitness", "Recipes", "Wellness", "Weight Loss"];
 
 const BlogList = () => {
   const [searchTerm, setSearchTerm] = useState("");

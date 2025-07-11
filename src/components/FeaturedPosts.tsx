@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -29,7 +28,7 @@ const featuredPosts = [
     id: 3,
     title: "Healthy Indian Breakfast Ideas Under ₹50",
     excerpt: "15 power-packed breakfast recipes that will energize your mornings and save you thousands monthly. Complete with weekly meal plans.",
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=250&fit=crop",
+    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=250&fit=crop",
     category: "Recipes",
     readTime: "10 min read",
     author: "Meera Singh"
@@ -52,8 +51,8 @@ const FeaturedPosts = () => {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-6">
             Handpicked content to kickstart your fitness journey without breaking the bank
           </p>
-          <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl p-3 inline-block shadow-lg">
-            <p class="font-bold">🎉 ALL ARTICLES ARE 100% FREE! 🎉</p>
+          <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-xl p-3 inline-block shadow-lg">
+            <p className="font-bold">🎉 ALL ARTICLES ARE 100% FREE! 🎉</p>
           </div>
         </motion.div>
 
