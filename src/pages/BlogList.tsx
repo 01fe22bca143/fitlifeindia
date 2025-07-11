@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -448,7 +447,7 @@ const BlogList = () => {
               className="text-center py-16"
             >
               <p className="text-xl text-gray-500">No articles found matching your search.</p>
-            </div>
+            </motion.div>
           )}
         </div>
       </section>
