@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -62,7 +63,7 @@ const blogPosts = [
     id: 6,
     title: "Building Muscle on a Vegetarian Diet: Complete Guide",
     excerpt: "Everything you need to know about gaining serious muscle mass while following a vegetarian lifestyle. Includes 7-day meal plans and supplement guide.",
-    image: "https://images.unsplash.com/photo-1583500178690-f7b6616a266d?w=400&h=250&fit=crop",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop",
     category: "Fitness",
     readTime: "18 min read",
     author: "Fitness Team",
