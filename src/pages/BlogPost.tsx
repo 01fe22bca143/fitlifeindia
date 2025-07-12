@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, User, Calendar } from "lucide-react";
+import { Clock, User, Calendar, Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const blogPosts = [
@@ -9,36 +9,34 @@ const blogPosts = [
     id: 1,
     title: "10 Budget-Friendly Protein Sources Every Indian Should Know",
     content: `
-      <p>Protein is the building block of life, but many Indians struggle to get enough of it without spending a fortune. Here's your complete guide to affordable protein sources that will transform your health without breaking your bank.</p>
-      
-      <h3>1. Dal (Lentils) - The Protein Powerhouse</h3>
-      <p>At just ₹80-120 per kg, dal provides 20-25g protein per 100g. Mix different dals like moong, masoor, and chana for a complete amino acid profile.</p>
-      
-      <h3>2. Eggs - Nature's Perfect Protein</h3>
-      <p>One egg costs ₹5-6 and provides 6g high-quality protein. Eat 2-3 eggs daily for affordable muscle building.</p>
-      
-      <h3>3. Paneer - Homemade vs Store-bought</h3>
-      <p>Make paneer at home for ₹200/kg vs ₹400+ in stores. 100g provides 18g protein plus calcium.</p>
-      
-      <h3>4. Rajma and Chickpeas</h3>
-      <p>₹100-150/kg, these legumes provide 15-20g protein per 100g when cooked. Perfect for curries and salads.</p>
-      
-      <h3>5. Chicken (When on Sale)</h3>
-      <p>Buy in bulk during sales at ₹150-200/kg. 100g provides 25g protein. Store properly and use within 2 days.</p>
-      
-      <h3>Weekly Protein Plan (₹500 Budget)</h3>
-      <ul>
-        <li>2kg Mixed Dal: ₹200</li>
-        <li>30 Eggs: ₹180</li>
-        <li>500g Paneer ingredients: ₹120</li>
-      </ul>
-      <p>Total protein per day: 60-80g for ₹70/day</p>
-      
-      <h3>Pro Tips for Maximum Savings</h3>
-      <p>• Buy in bulk during festivals</p>
-      <p>• Soak lentils overnight to reduce cooking time</p>
-      <p>• Combine incomplete proteins (rice + dal) for better absorption</p>
-      <p>• Make protein smoothies with milk powder</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Protein is the building block of life, but many Indians struggle to get enough of it without spending a fortune. Here's your complete guide to affordable protein sources that will transform your health without breaking your bank.</p>
+        
+        <div class="bg-gradient-to-r from-orange-100 to-pink-100 p-6 rounded-xl border-l-4 border-orange-500">
+          <h3 class="text-xl font-bold text-orange-800 mb-3">1. Dal (Lentils) - The Protein Powerhouse</h3>
+          <p class="text-gray-700">At just ₹80-120 per kg, dal provides 20-25g protein per 100g. Mix different dals like moong, masoor, and chana for a complete amino acid profile.</p>
+        </div>
+        
+        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-800 mb-3">2. Eggs - Nature's Perfect Protein</h3>
+          <p class="text-gray-700">One egg costs ₹5-6 and provides 6g high-quality protein. Eat 2-3 eggs daily for affordable muscle building.</p>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-500">
+          <h3 class="text-xl font-bold text-purple-800 mb-3">3. Paneer - Homemade vs Store-bought</h3>
+          <p class="text-gray-700">Make paneer at home for ₹200/kg vs ₹400+ in stores. 100g provides 18g protein plus calcium.</p>
+        </div>
+        
+        <div class="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl border-l-4 border-yellow-500">
+          <h3 class="text-xl font-bold text-yellow-800 mb-3">Weekly Protein Plan (₹500 Budget)</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>2kg Mixed Dal: ₹200</li>
+            <li>30 Eggs: ₹180</li>
+            <li>500g Paneer ingredients: ₹120</li>
+          </ul>
+          <p class="mt-3 font-semibold text-yellow-800">Total protein per day: 60-80g for ₹70/day</p>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&h=400&fit=crop",
     category: "Nutrition",
@@ -50,35 +48,39 @@ const blogPosts = [
     id: 2,
     title: "Home Workout Routine: No Gym, No Problem",
     content: `
-      <p>Transform your body in 4 weeks with this scientifically designed home workout program. No equipment needed, just dedication and consistency.</p>
-      
-      <h3>Week 1-2: Foundation Building</h3>
-      <p><strong>Day 1: Upper Body</strong></p>
-      <ul>
-        <li>Push-ups: 3 sets of 8-12 reps</li>
-        <li>Pike push-ups: 3 sets of 5-8 reps</li>
-        <li>Tricep dips (chair): 3 sets of 8-10 reps</li>
-        <li>Plank: 3 sets of 30-45 seconds</li>
-      </ul>
-      
-      <p><strong>Day 2: Lower Body</strong></p>
-      <ul>
-        <li>Bodyweight squats: 3 sets of 15-20 reps</li>
-        <li>Lunges: 3 sets of 10 per leg</li>
-        <li>Single-leg glute bridges: 3 sets of 12 per leg</li>
-        <li>Wall sit: 3 sets of 30-45 seconds</li>
-      </ul>
-      
-      <h3>Week 3-4: Intensity Boost</h3>
-      <p>Increase reps by 20% and add jump variations to existing exercises.</p>
-      
-      <h3>Nutrition Support</h3>
-      <p>• Eat protein within 30 minutes post-workout</p>
-      <p>• Stay hydrated with 3-4 liters water daily</p>
-      <p>• Get 7-8 hours sleep for recovery</p>
-      
-      <h3>Progress Tracking</h3>
-      <p>Take photos and measurements weekly. Focus on how you feel rather than just weight.</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Transform your body in 4 weeks with this scientifically designed home workout program. No equipment needed, just dedication and consistency.</p>
+        
+        <div class="bg-gradient-to-r from-red-100 to-pink-100 p-6 rounded-xl border-l-4 border-red-500">
+          <h3 class="text-xl font-bold text-red-800 mb-3">Week 1-2: Foundation Building</h3>
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Day 1: Upper Body</h4>
+              <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>Push-ups: 3 sets of 8-12 reps</li>
+                <li>Pike push-ups: 3 sets of 5-8 reps</li>
+                <li>Tricep dips (chair): 3 sets of 8-10 reps</li>
+                <li>Plank: 3 sets of 30-45 seconds</li>
+              </ul>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Day 2: Lower Body</h4>
+              <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>Bodyweight squats: 3 sets of 15-20 reps</li>
+                <li>Lunges: 3 sets of 10 per leg</li>
+                <li>Single-leg glute bridges: 3 sets of 12 per leg</li>
+                <li>Wall sit: 3 sets of 30-45 seconds</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-green-100 to-teal-100 p-6 rounded-xl border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-800 mb-3">Week 3-4: Intensity Boost</h3>
+          <p class="text-gray-700">Increase reps by 20% and add jump variations to existing exercises.</p>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop",
     category: "Fitness",
@@ -90,41 +92,36 @@ const blogPosts = [
     id: 3,
     title: "Healthy Indian Breakfast Ideas Under ₹50",
     content: `
-      <p>Start your day right with these 15 power-packed breakfast recipes that cost less than ₹50 and provide sustained energy throughout the morning.</p>
-      
-      <h3>1. Protein-Rich Moong Dal Chilla (₹25)</h3>
-      <p><strong>Ingredients:</strong> 1 cup moong dal, onions, tomatoes, spices</p>
-      <p><strong>Nutrition:</strong> 20g protein, 300 calories</p>
-      <p>Soak dal overnight, grind into batter, add veggies and cook like pancakes.</p>
-      
-      <h3>2. Oats Upma with Vegetables (₹30)</h3>
-      <p><strong>Ingredients:</strong> 1 cup oats, mixed vegetables, mustard seeds</p>
-      <p><strong>Nutrition:</strong> 12g protein, 250 calories, high fiber</p>
-      <p>Roast oats, sauté with veggies and spices for a South Indian twist.</p>
-      
-      <h3>3. Besan Cheela with Spinach (₹20)</h3>
-      <p><strong>Ingredients:</strong> Gram flour, spinach, turmeric, chili</p>
-      <p><strong>Nutrition:</strong> 15g protein, rich in iron</p>
-      
-      <h3>4. Quinoa Poha (₹40)</h3>
-      <p>Replace rice poha with quinoa for double the protein content.</p>
-      
-      <h3>5. Sprouted Mung Salad (₹25)</h3>
-      <p>High in protein and enzymes, perfect for digestion.</p>
-      
-      <h3>Weekly Meal Prep Strategy</h3>
-      <p>• Soak lentils and sprouts on Sunday</p>
-      <p>• Pre-cut vegetables for 3 days</p>
-      <p>• Make batter in batches</p>
-      
-      <h3>Cost Breakdown (Monthly)</h3>
-      <ul>
-        <li>Moong dal (2kg): ₹200</li>
-        <li>Oats (1kg): ₹150</li>
-        <li>Vegetables: ₹300</li>
-        <li>Spices: ₹100</li>
-      </ul>
-      <p><strong>Total: ₹750 for 30 healthy breakfasts (₹25/day)</strong></p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Start your day right with these 15 power-packed breakfast recipes that cost less than ₹50 and provide sustained energy throughout the morning.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-yellow-100 to-orange-100 p-6 rounded-xl border-l-4 border-yellow-500">
+            <h3 class="text-lg font-bold text-yellow-800 mb-2">Protein-Rich Moong Dal Chilla (₹25)</h3>
+            <p class="text-sm text-gray-600 mb-2"><strong>Ingredients:</strong> 1 cup moong dal, onions, tomatoes, spices</p>
+            <p class="text-sm text-gray-600 mb-2"><strong>Nutrition:</strong> 20g protein, 300 calories</p>
+            <p class="text-gray-700">Soak dal overnight, grind into batter, add veggies and cook like pancakes.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-100 to-emerald-100 p-6 rounded-xl border-l-4 border-green-500">
+            <h3 class="text-lg font-bold text-green-800 mb-2">Oats Upma with Vegetables (₹30)</h3>
+            <p class="text-sm text-gray-600 mb-2"><strong>Ingredients:</strong> 1 cup oats, mixed vegetables, mustard seeds</p>
+            <p class="text-sm text-gray-600 mb-2"><strong>Nutrition:</strong> 12g protein, 250 calories, high fiber</p>
+            <p class="text-gray-700">Roast oats, sauté with veggies and spices for a South Indian twist.</p>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-xl border-l-4 border-purple-500">
+          <h3 class="text-xl font-bold text-purple-800 mb-3">Monthly Cost Breakdown</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Moong dal (2kg): ₹200</li>
+            <li>Oats (1kg): ₹150</li>
+            <li>Vegetables: ₹300</li>
+            <li>Spices: ₹100</li>
+          </ul>
+          <p class="mt-3 font-bold text-lg text-purple-800">Total: ₹750 for 30 healthy breakfasts (₹25/day)</p>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=800&h=400&fit=crop",
     category: "Recipes",
@@ -136,31 +133,35 @@ const blogPosts = [
     id: 4,
     title: "Mental Health and Fitness: The Indian Wellness Revolution",
     content: `
-      <p>Discover the powerful connection between physical fitness and mental well-being through ancient Indian practices combined with modern science.</p>
-      
-      <h3>The 5-Pillar Indian Wellness System</h3>
-      
-      <h3>Pillar 1: Pranayama (Breathing Techniques)</h3>
-      <p>Practice Anulom Vilom for 10 minutes daily to reduce stress hormones by 40%.</p>
-      
-      <h3>Pillar 2: Yoga Asanas for Mental Clarity</h3>
-      <p>Child's pose, downward dog, and warrior poses release tension and improve focus.</p>
-      
-      <h3>Pillar 3: Meditation and Mindfulness</h3>
-      <p>Start with 5 minutes of Vipassana meditation daily.</p>
-      
-      <h3>Pillar 4: Ayurvedic Nutrition</h3>
-      <p>Eat according to your dosha for optimal mental health.</p>
-      
-      <h3>Pillar 5: Physical Activity</h3>
-      <p>Regular exercise increases endorphins and reduces anxiety.</p>
-      
-      <h3>Scientific Evidence</h3>
-      <p>Studies show yoga reduces depression by 50% and anxiety by 60%.</p>
-      
-      <h3>Daily Routine for Mental Wellness</h3>
-      <p>Morning: 10 min pranayama + 20 min yoga</p>
-      <p>Evening: 30 min walk + 10 min meditation</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Discover the powerful connection between physical fitness and mental well-being through ancient Indian practices combined with modern science.</p>
+        
+        <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl border-l-4 border-indigo-500">
+          <h3 class="text-xl font-bold text-indigo-800 mb-3">The 5-Pillar Indian Wellness System</h3>
+          
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Pillar 1: Pranayama (Breathing Techniques)</h4>
+              <p class="text-gray-700">Practice Anulom Vilom for 10 minutes daily to reduce stress hormones by 40%.</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Pillar 2: Yoga Asanas for Mental Clarity</h4>
+              <p class="text-gray-700">Child's pose, downward dog, and warrior poses release tension and improve focus.</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Pillar 3: Meditation and Mindfulness</h4>
+              <p class="text-gray-700">Start with 5 minutes of Vipassana meditation daily.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-xl border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-800 mb-3">Scientific Evidence</h3>
+          <p class="text-gray-700">Studies show yoga reduces depression by 50% and anxiety by 60%.</p>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
     category: "Wellness",
@@ -172,34 +173,43 @@ const blogPosts = [
     id: 5,
     title: "Street Food Makeover: Healthy Versions of Indian Favorites",
     content: `
-      <p>Love street food but hate the guilt? Here are 8 healthy makeovers of popular Indian street foods with 60% fewer calories.</p>
-      
-      <h3>1. Baked Samosa (Instead of Fried)</h3>
-      <p><strong>Original:</strong> 350 calories, 20g fat</p>
-      <p><strong>Healthy version:</strong> 180 calories, 5g fat</p>
-      <p>Use whole wheat flour, bake at 180°C for 25 minutes.</p>
-      
-      <h3>2. Air-Fried Pakoras</h3>
-      <p>Cut oil by 80% using an air fryer or oven-baking method.</p>
-      
-      <h3>3. Grilled Corn Chaat</h3>
-      <p>Skip the butter, add lime, chaat masala, and fresh herbs.</p>
-      
-      <h3>4. Quinoa Bhel Puri</h3>
-      <p>Replace puffed rice with quinoa for extra protein.</p>
-      
-      <h3>5. Baked Aloo Tikki</h3>
-      <p>Pan-sear with minimal oil instead of deep frying.</p>
-      
-      <h3>Healthy Chutneys</h3>
-      <p>• Mint-coriander without oil</p>
-      <p>• Tamarind date chutney with jaggery</p>
-      
-      <h3>Weekly Street Food Schedule</h3>
-      <p>Monday: Baked samosas</p>
-      <p>Wednesday: Quinoa bhel</p>
-      <p>Friday: Grilled corn chaat</p>
-      <p>Sunday: Air-fried pakoras</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Love street food but hate the guilt? Here are 8 healthy makeovers of popular Indian street foods with 60% fewer calories.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-orange-100 to-red-100 p-6 rounded-xl border-l-4 border-orange-500">
+            <h3 class="text-lg font-bold text-orange-800 mb-2">Baked Samosa (Instead of Fried)</h3>
+            <p class="text-sm text-gray-600 mb-2"><strong>Original:</strong> 350 calories, 20g fat</p>
+            <p class="text-sm text-gray-600 mb-2"><strong>Healthy version:</strong> 180 calories, 5g fat</p>
+            <p class="text-gray-700">Use whole wheat flour, bake at 180°C for 25 minutes.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-yellow-100 to-orange-100 p-6 rounded-xl border-l-4 border-yellow-500">
+            <h3 class="text-lg font-bold text-yellow-800 mb-2">Air-Fried Pakoras</h3>
+            <p class="text-gray-700">Cut oil by 80% using an air fryer or oven-baking method.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-100 to-teal-100 p-6 rounded-xl border-l-4 border-green-500">
+            <h3 class="text-lg font-bold text-green-800 mb-2">Grilled Corn Chaat</h3>
+            <p class="text-gray-700">Skip the butter, add lime, chaat masala, and fresh herbs.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-xl border-l-4 border-purple-500">
+            <h3 class="text-lg font-bold text-purple-800 mb-2">Quinoa Bhel Puri</h3>
+            <p class="text-gray-700">Replace puffed rice with quinoa for extra protein.</p>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl border-l-4 border-blue-500">
+          <h3 class="text-xl font-bold text-blue-800 mb-3">Weekly Street Food Schedule</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <p class="text-gray-700"><strong>Monday:</strong> Baked samosas</p>
+            <p class="text-gray-700"><strong>Wednesday:</strong> Quinoa bhel</p>
+            <p class="text-gray-700"><strong>Friday:</strong> Grilled corn chaat</p>
+            <p class="text-gray-700"><strong>Sunday:</strong> Air-fried pakoras</p>
+          </div>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&h=400&fit=crop",
     category: "Recipes",
@@ -211,32 +221,54 @@ const blogPosts = [
     id: 6,
     title: "Building Muscle on a Vegetarian Diet: Complete Guide",
     content: `
-      <p>Gain serious muscle mass while following a vegetarian lifestyle with this comprehensive guide including 7-day meal plans.</p>
-      
-      <h3>Vegetarian Protein Powerhouses</h3>
-      <p><strong>Paneer:</strong> 18g protein per 100g</p>
-      <p><strong>Tofu:</strong> 15g protein per 100g</p>
-      <p><strong>Greek yogurt:</strong> 20g protein per 100g</p>
-      <p><strong>Quinoa:</strong> 14g protein per 100g</p>
-      
-      <h3>7-Day Muscle Building Meal Plan</h3>
-      
-      <h3>Day 1 Sample</h3>
-      <p><strong>Breakfast:</strong> Protein smoothie with banana, oats, and peanut butter</p>
-      <p><strong>Lunch:</strong> Quinoa pulao with paneer and vegetables</p>
-      <p><strong>Dinner:</strong> Dal makhani with brown rice</p>
-      <p><strong>Snacks:</strong> Roasted chickpeas, Greek yogurt</p>
-      
-      <h3>Supplement Guide</h3>
-      <p>• Whey protein (if lacto-vegetarian): 25g post-workout</p>
-      <p>• Creatine monohydrate: 5g daily</p>
-      <p>• Vitamin B12: 1000mcg weekly</p>
-      
-      <h3>Workout Schedule</h3>
-      <p>3 days strength training + 2 days cardio + 2 rest days</p>
-      
-      <h3>Expected Results</h3>
-      <p>Gain 0.5-1kg muscle per month with consistent diet and training.</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Gain serious muscle mass while following a vegetarian lifestyle with this comprehensive guide including 7-day meal plans.</p>
+        
+        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-800 mb-3">Vegetarian Protein Powerhouses</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Paneer:</p>
+              <p class="text-sm text-gray-600">18g protein per 100g</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Tofu:</p>
+              <p class="text-sm text-gray-600">15g protein per 100g</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Greek yogurt:</p>
+              <p class="text-sm text-gray-600">20g protein per 100g</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Quinoa:</p>
+              <p class="text-sm text-gray-600">14g protein per 100g</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-l-4 border-blue-500">
+          <h3 class="text-xl font-bold text-blue-800 mb-3">Day 1 Sample Meal Plan</h3>
+          <div class="space-y-3">
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Breakfast:</p>
+              <p class="text-gray-700">Protein smoothie with banana, oats, and peanut butter</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Lunch:</p>
+              <p class="text-gray-700">Quinoa pulao with paneer and vegetables</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Dinner:</p>
+              <p class="text-gray-700">Dal makhani with brown rice</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl border-l-4 border-orange-500">
+          <h3 class="text-xl font-bold text-orange-800 mb-3">Expected Results</h3>
+          <p class="text-gray-700 text-lg">Gain 0.5-1kg muscle per month with consistent diet and training.</p>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop",
     category: "Fitness",
@@ -248,37 +280,41 @@ const blogPosts = [
     id: 7,
     title: "Student's Guide to 15-Minute Healthy Meals",
     content: `
-      <p>Quick, nutritious recipes perfect for college students and working professionals. Cook healthy meals in under 15 minutes with ingredients under ₹100.</p>
-      
-      <h3>5 Super Quick Recipes</h3>
-      
-      <h3>1. Veggie Maggi Upgrade (8 minutes)</h3>
-      <p>Add eggs, spinach, and carrots to instant noodles for protein and vitamins.</p>
-      
-      <h3>2. Microwave Poha (5 minutes)</h3>
-      <p>Heat poha with water, add vegetables and spices in microwave.</p>
-      
-      <h3>3. Bread Pizza (10 minutes)</h3>
-      <p>Whole wheat bread + tomato sauce + cheese + vegetables in oven.</p>
-      
-      <h3>4. Dal Rice Express (12 minutes)</h3>
-      <p>Pressure cook moong dal and rice together with vegetables.</p>
-      
-      <h3>5. Smoothie Bowl (3 minutes)</h3>
-      <p>Blend fruits with yogurt, top with nuts and seeds.</p>
-      
-      <h3>Shopping List (Weekly - ₹500)</h3>
-      <ul>
-        <li>Eggs (30): ₹180</li>
-        <li>Bread (4 loaves): ₹80</li>
-        <li>Vegetables: ₹150</li>
-        <li>Dal/Rice: ₹90</li>
-      </ul>
-      
-      <h3>Meal Prep Hacks</h3>
-      <p>• Pre-cut vegetables on Sunday</p>
-      <p>• Cook rice in bulk</p>
-      <p>• Keep boiled eggs ready</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Quick, nutritious recipes perfect for college students and working professionals. Cook healthy meals in under 15 minutes with ingredients under ₹100.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-yellow-100 to-orange-100 p-6 rounded-xl border-l-4 border-yellow-500">
+            <h3 class="text-lg font-bold text-yellow-800 mb-2">Veggie Maggi Upgrade (8 minutes)</h3>
+            <p class="text-gray-700">Add eggs, spinach, and carrots to instant noodles for protein and vitamins.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-100 to-teal-100 p-6 rounded-xl border-l-4 border-green-500">
+            <h3 class="text-lg font-bold text-green-800 mb-2">Microwave Poha (5 minutes)</h3>
+            <p class="text-gray-700">Heat poha with water, add vegetables and spices in microwave.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-6 rounded-xl border-l-4 border-purple-500">
+            <h3 class="text-lg font-bold text-purple-800 mb-2">Bread Pizza (10 minutes)</h3>
+            <p class="text-gray-700">Whole wheat bread + tomato sauce + cheese + vegetables in oven.</p>
+          </div>
+          
+          <div class="bg-gradient-to-br from-blue-100 to-indigo-100 p-6 rounded-xl border-l-4 border-blue-500">
+            <h3 class="text-lg font-bold text-blue-800 mb-2">Dal Rice Express (12 minutes)</h3>
+            <p class="text-gray-700">Pressure cook moong dal and rice together with vegetables.</p>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl border-l-4 border-orange-500">
+          <h3 class="text-xl font-bold text-orange-800 mb-3">Shopping List (Weekly - ₹500)</h3>
+          <ul class="list-disc list-inside space-y-2 text-gray-700">
+            <li>Eggs (30): ₹180</li>
+            <li>Bread (4 loaves): ₹80</li>
+            <li>Vegetables: ₹150</li>
+            <li>Dal/Rice: ₹90</li>
+          </ul>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=400&fit=crop",
     category: "Recipes",
@@ -290,210 +326,57 @@ const blogPosts = [
     id: 8,
     title: "Sleep Better, Live Better: Indian Sleep Optimization",
     content: `
-      <p>Transform your sleep quality with traditional Indian practices combined with modern sleep science.</p>
-      
-      <h3>Ancient Ayurvedic Sleep Wisdom</h3>
-      
-      <h3>1. Follow Your Circadian Rhythm</h3>
-      <p>Sleep by 10 PM and wake at 6 AM for optimal hormone production.</p>
-      
-      <h3>2. Evening Rituals</h3>
-      <p>• Warm milk with turmeric and cardamom</p>
-      <p>• Oil massage on feet (coconut or sesame)</p>
-      <p>• Pranayama breathing exercises</p>
-      
-      <h3>3. Bedroom Optimization</h3>
-      <p>• Temperature: 18-22°C</p>
-      <p>• No screens 1 hour before bed</p>
-      <p>• Use essential oils like lavender</p>
-      
-      <h3>Modern Sleep Science</h3>
-      <p>Studies show Indians who follow traditional sleep patterns have 40% better sleep quality.</p>
-      
-      <h3>Sleep-Inducing Foods</h3>
-      <p>• Almonds (magnesium)</p>
-      <p>• Cherries (natural melatonin)</p>
-      <p>• Chamomile tea</p>
-      
-      <h3>4-Week Sleep Challenge</h3>
-      <p>Week 1: Fix sleep timing</p>
-      <p>Week 2: Create evening routine</p>
-      <p>Week 3: Optimize bedroom</p>
-      <p>Week 4: Track and adjust</p>
+      <div class="space-y-6">
+        <p class="text-lg font-medium text-gray-800">Transform your sleep quality with traditional Indian practices combined with modern sleep science.</p>
+        
+        <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl border-l-4 border-indigo-500">
+          <h3 class="text-xl font-bold text-indigo-800 mb-3">Ancient Ayurvedic Sleep Wisdom</h3>
+          
+          <div class="space-y-4">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Follow Your Circadian Rhythm</h4>
+              <p class="text-gray-700">Sleep by 10 PM and wake at 6 AM for optimal hormone production.</p>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <h4 class="font-bold text-gray-800 mb-2">Evening Rituals</h4>
+              <ul class="list-disc list-inside space-y-1 text-gray-700">
+                <li>Warm milk with turmeric and cardamom</li>
+                <li>Oil massage on feet (coconut or sesame)</li>
+                <li>Pranayama breathing exercises</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-gradient-to-r from-green-100 to-blue-100 p-6 rounded-xl border-l-4 border-green-500">
+          <h3 class="text-xl font-bold text-green-800 mb-3">4-Week Sleep Challenge</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Week 1:</p>
+              <p class="text-sm text-gray-600">Fix sleep timing</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Week 2:</p>
+              <p class="text-sm text-gray-600">Create evening routine</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Week 3:</p>
+              <p class="text-sm text-gray-600">Optimize bedroom</p>
+            </div>
+            <div class="bg-white p-3 rounded-lg">
+              <p class="font-semibold text-gray-800">Week 4:</p>
+              <p class="text-sm text-gray-600">Track and adjust</p>
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&h=400&fit=crop",
     category: "Wellness",
     readTime: "11 min read",
     author: "Dr. Meera Patel",
     date: "Dec 1, 2024"
-  },
-  {
-    id: 9,
-    title: "Water Therapy: The Indian Way to Weight Loss",
-    content: `
-      <p>Discover how proper hydration combined with traditional Indian water therapy can accelerate weight loss naturally.</p>
-      
-      <h3>Traditional Indian Water Therapy</h3>
-      
-      <h3>1. Morning Water Ritual</h3>
-      <p>Drink 1 liter of room temperature water immediately after waking up.</p>
-      
-      <h3>2. Copper Water Benefits</h3>
-      <p>Store water in copper vessel overnight for antimicrobial properties.</p>
-      
-      <h3>3. Timing Chart</h3>
-      <ul>
-        <li>6 AM: 2 glasses (empty stomach)</li>
-        <li>30 min before meals: 1 glass</li>
-        <li>2 hours after meals: 1 glass</li>
-        <li>Before bed: 1 glass</li>
-      </ul>
-      
-      <h3>Flavored Water Combinations</h3>
-      <p>• Lemon + mint + cucumber</p>
-      <p>• Ginger + lemon + honey</p>
-      <p>• Fennel seed water</p>
-      <p>• Ajwain water for digestion</p>
-      
-      <h3>Weight Loss Science</h3>
-      <p>Proper hydration boosts metabolism by 30% and reduces hunger by 40%.</p>
-      
-      <h3>30-Day Water Challenge</h3>
-      <p>Follow the timing chart and track your weight loss journey.</p>
-    `,
-    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=400&fit=crop",
-    category: "Weight Loss",
-    readTime: "7 min read",
-    author: "Nutritionist Ravi",
-    date: "Nov 30, 2024"
-  },
-  {
-    id: 10,
-    title: "Desk Job Detox: 5-Minute Office Exercises",
-    content: `
-      <p>Combat sitting disease with these discrete office exercises that improve posture, reduce back pain, and boost energy.</p>
-      
-      <h3>The Sitting Problem</h3>
-      <p>Average Indian office worker sits 8-10 hours daily, leading to:</p>
-      <ul>
-        <li>Lower back pain (80% of workers)</li>
-        <li>Neck strain (65% of workers)</li>
-        <li>Reduced metabolism</li>
-        <li>Poor circulation</li>
-      </ul>
-      
-      <h3>5-Minute Desk Workout</h3>
-      
-      <h3>1. Neck and Shoulder Relief (1 minute)</h3>
-      <p>• Neck rolls: 5 each direction</p>
-      <p>• Shoulder shrugs: 10 reps</p>
-      <p>• Shoulder blade squeezes: 10 reps</p>
-      
-      <h3>2. Core Activation (1 minute)</h3>
-      <p>• Seated leg lifts: 10 per leg</p>
-      <p>• Seated Russian twists: 15 reps</p>
-      
-      <h3>3. Lower Body (1 minute)</h3>
-      <p>• Ankle circles: 10 each direction</p>
-      <p>• Calf raises: 15 reps</p>
-      
-      <h3>Hourly Movement Reminders</h3>
-      <p>Set phone alarm every hour for 2-minute breaks.</p>
-      
-      <h3>Ergonomic Setup</h3>
-      <p>• Monitor at eye level</p>
-      <p>• Feet flat on floor</p>
-      <p>• Back supported</p>
-    `,
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop",
-    category: "Fitness",
-    readTime: "6 min read",
-    author: "Physiotherapist Sana",
-    date: "Nov 29, 2024"
-  },
-  {
-    id: 11,
-    title: "Indian Superfoods on a Shoestring Budget",
-    content: `
-      <p>Discover 12 powerful Indian superfoods that cost less than ₹20 each and can boost immunity, energy, and health without expensive supplements.</p>
-      
-      <h3>12 Budget Superfoods</h3>
-      
-      <h3>1. Turmeric (₹15/100g)</h3>
-      <p>Anti-inflammatory powerhouse. Use in milk, curries, and face masks.</p>
-      
-      <h3>2. Ginger (₹10/100g)</h3>
-      <p>Boosts immunity and aids digestion. Make ginger tea daily.</p>
-      
-      <h3>3. Garlic (₹20/100g)</h3>
-      <p>Natural antibiotic. Eat 2-3 cloves raw daily for maximum benefits.</p>
-      
-      <h3>4. Amla (₹15/100g)</h3>
-      <p>Vitamin C powerhouse. One amla = 20 oranges worth of Vitamin C.</p>
-      
-      <h3>5. Methi Seeds (₹18/100g)</h3>
-      <p>Controls blood sugar. Soak overnight and eat on empty stomach.</p>
-      
-      <h3>6. Tulsi (₹10/packet)</h3>
-      <p>Adaptogen herb. Make fresh tea for stress relief.</p>
-      
-      <h3>Daily Superfood Routine</h3>
-      <p>Morning: Amla juice + tulsi tea</p>
-      <p>Afternoon: Turmeric latte</p>
-      <p>Evening: Ginger tea with methi seeds</p>
-      
-      <h3>Monthly Cost Breakdown</h3>
-      <p>Total for all 12 superfoods: ₹200/month</p>
-      <p>That's just ₹6.60 per day for premium nutrition!</p>
-    `,
-    image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=400&fit=crop",
-    category: "Nutrition",
-    readTime: "13 min read",
-    author: "Ayurveda Expert Priya",
-    date: "Nov 28, 2024"
-  },
-  {
-    id: 12,
-    title: "Stress-Free Cooking: One-Pot Indian Meals",
-    content: `
-      <p>Master the art of one-pot cooking with these 10 nutritious Indian recipes that save time, reduce dishes, and maintain authentic flavors.</p>
-      
-      <h3>Benefits of One-Pot Cooking</h3>
-      <ul>
-        <li>Saves 50% cooking time</li>
-        <li>Minimal cleanup</li>
-        <li>Better nutrient retention</li>
-        <li>Perfect for busy schedules</li>
-      </ul>
-      
-      <h3>10 One-Pot Wonders</h3>
-      
-      <h3>1. Dal Khichdi (20 minutes)</h3>
-      <p>Rice + moong dal + vegetables cooked together. Complete meal with ghee.</p>
-      
-      <h3>2. Vegetable Biryani (25 minutes)</p>
-      <p>Layer rice, vegetables, and spices in pressure cooker.</p>
-      
-      <h3>3. Rajma Rice (30 minutes)</h3>
-      <p>Kidney beans and rice cooked together with Indian spices.</p>
-      
-      <h3>4. Chicken Curry Rice (35 minutes)</h3>
-      <p>For non-vegetarians: chicken + rice + vegetables in one pot.</p>
-      
-      <h3>Essential Equipment</h3>
-      <p>• Pressure cooker or Instant Pot</p>
-      <p>• Heavy-bottomed pan</p>
-      <p>• Good quality rice</p>
-      
-      <h3>Weekly Meal Planning</h3>
-      <p>Sunday: Prep vegetables and spices</p>
-      <p>Cook 2-3 one-pot meals weekly and freeze portions.</p>
-    `,
-    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&h=400&fit=crop",
-    category: "Recipes",
-    readTime: "14 min read",
-    author: "Home Chef Anjali",
-    date: "Nov 27, 2024"
   }
 ];
 
@@ -518,28 +401,55 @@ const BlogPost = () => {
           transition={{ duration: 0.6 }}
         >
           <Card className="overflow-hidden shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-            <div className="relative h-96 overflow-hidden">
+            <motion.div 
+              className="relative h-96 overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
               <img 
                 src={post.image} 
                 alt={post.title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute top-4 left-4">
-                <Badge className="bg-gradient-to-r from-orange-500 to-pink-500 text-white border-0">
-                  {post.category}
-                </Badge>
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Badge className="bg-gradient-to-r from-orange-500 to-pink-500 text-white border-0">
+                    {post.category}
+                  </Badge>
+                </motion.div>
               </div>
-              <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold">
+              <motion.div 
+                className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold"
+                initial={{ x: 20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                whileHover={{ scale: 1.1 }}
+              >
                 FREE
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             
             <CardHeader className="pb-4">
-              <CardTitle className="text-3xl font-bold text-gray-800 leading-tight">
-                {post.title}
-              </CardTitle>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <CardTitle className="text-3xl font-bold text-gray-800 leading-tight">
+                  {post.title}
+                </CardTitle>
+              </motion.div>
               
-              <div className="flex items-center gap-6 text-sm text-gray-500 mt-4">
+              <motion.div 
+                className="flex items-center gap-6 text-sm text-gray-500 mt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4" />
                   <span>{post.author}</span>
@@ -552,16 +462,54 @@ const BlogPost = () => {
                   <Calendar className="w-4 h-4" />
                   <span>{post.date}</span>
                 </div>
-              </div>
+              </motion.div>
             </CardHeader>
             
             <CardContent className="prose prose-lg max-w-none">
-              <div 
+              <motion.div 
                 dangerouslySetInnerHTML={{ __html: post.content }}
                 className="text-gray-700 leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
               />
             </CardContent>
           </Card>
+
+          {/* Expert Fitness Tips Video Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="mt-12"
+          >
+            <Card className="overflow-hidden shadow-xl border-0 bg-white/80 backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                  <Play className="w-6 h-6 text-red-500" />
+                  Expert Fitness Tips Video
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="relative">
+                  <iframe
+                    width="100%"
+                    height="400"
+                    src="https://www.youtube.com/embed/ml6cT4AZdqI"
+                    title="Fitness Tips for Beginners"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-lg shadow-lg"
+                  ></iframe>
+                </div>
+                <p className="mt-4 text-gray-600">
+                  Watch this expert-recommended fitness routine that complements the article above. 
+                  Perfect for beginners looking to start their fitness journey at home.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
         </motion.div>
       </div>
     </div>
