@@ -18,6 +18,7 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isHomePage = location.pathname === "/";
 
   const handleJoinFree = () => {
     toast.success("Welcome to FitLife India! 🎉 You now have access to all our free content!");
@@ -71,14 +72,16 @@ const Navbar = () => {
 
           {/* Search & CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="rounded-full hover:bg-orange-50"
-              onClick={handleSearch}
-            >
-              <Search className="w-5 h-5 text-gray-600" />
-            </Button>
+            {!isHomePage && (
+              <Button
+                variant="ghost"
+                size="sm"
+                className="rounded-full hover:bg-orange-50"
+                onClick={handleSearch}
+              >
+                <Search className="w-5 h-5 text-gray-600" />
+              </Button>
+            )}
             <Button
               size="sm"
               className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white border-0 rounded-full px-6"
@@ -129,15 +132,17 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="flex items-center space-x-3 pt-2">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="flex-1 rounded-full hover:bg-orange-50"
-                  onClick={handleSearch}
-                >
-                  <Search className="w-5 h-5 mr-2" />
-                  Search
-                </Button>
+                {!isHomePage && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="flex-1 rounded-full hover:bg-orange-50"
+                    onClick={handleSearch}
+                  >
+                    <Search className="w-5 h-5 mr-2" />
+                    Search
+                  </Button>
+                )}
                 <Button
                   size="sm"
                   className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white border-0 rounded-full"
