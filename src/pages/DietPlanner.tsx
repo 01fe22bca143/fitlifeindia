@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,153 +40,153 @@ const DietPlanner = () => {
     const age = parseFloat(formData.age);
     const bmi = (weight / Math.pow(height / 100, 2)).toFixed(1);
     
-    // Calculate BMR using Mifflin-St Jeor Equation
+    // Calculate BMR using Mifflin-St Jeor Equation (more accurate)
     const bmr = 10 * weight + 6.25 * height - 5 * age + 5; // for males (simplified)
-    const tdee = Math.round(bmr * 1.5); // moderate activity level
+    const tdee = Math.round(bmr * 1.6); // moderately active lifestyle
     
     let calories;
     if (formData.goal === "weight loss") {
-      calories = Math.round(tdee - 500);
+      calories = Math.round(tdee - 500); // 500 calorie deficit
     } else if (formData.goal === "weight gain") {
-      calories = Math.round(tdee + 500);
+      calories = Math.round(tdee + 500); // 500 calorie surplus
     } else {
       calories = tdee;
     }
 
-    const protein = Math.round(weight * 2.2); // 2.2g per kg
-    const fat = Math.round(calories * 0.25 / 9); // 25% of calories
+    const protein = Math.round(weight * 2.2); // 2.2g per kg for active individuals
+    const fat = Math.round(calories * 0.25 / 9); // 25% of calories from fat
     const carbs = Math.round((calories - (protein * 4) - (fat * 9)) / 4);
 
     const dietPlans = {
       veg: {
         "weight loss": {
           breakfast: [
-            { food: "Oats with berries and almonds", calories: 250, protein: 8, carbs: 45, fat: 6 },
-            { food: "Green tea", calories: 2, protein: 0, carbs: 0, fat: 0 },
-            { food: "1 boiled egg white", calories: 17, protein: 4, carbs: 0, fat: 0 }
+            { food: "Oats with mixed berries", quantity: "1 cup (80g) + 1/2 cup berries", calories: 280, protein: 9, carbs: 50, fat: 6 },
+            { food: "Green tea", quantity: "1 cup (240ml)", calories: 2, protein: 0, carbs: 0, fat: 0 },
+            { food: "Almonds", quantity: "10 pieces (14g)", calories: 82, protein: 3, carbs: 3, fat: 7 }
           ],
           lunch: [
-            { food: "Brown rice (1 cup)", calories: 220, protein: 5, carbs: 45, fat: 2 },
-            { food: "Dal (1 cup)", calories: 180, protein: 12, carbs: 30, fat: 1 },
-            { food: "Mixed vegetable curry", calories: 120, protein: 4, carbs: 20, fat: 4 },
-            { food: "Green salad", calories: 50, protein: 2, carbs: 10, fat: 0 }
+            { food: "Brown rice", quantity: "3/4 cup cooked (150g)", calories: 165, protein: 4, carbs: 34, fat: 1 },
+            { food: "Dal (moong)", quantity: "1 cup (200g)", calories: 212, protein: 14, carbs: 38, fat: 1 },
+            { food: "Mixed vegetable curry", quantity: "1 cup (150g)", calories: 95, protein: 3, carbs: 18, fat: 2 },
+            { food: "Green salad with lemon", quantity: "1 large bowl (100g)", calories: 25, protein: 2, carbs: 5, fat: 0 }
           ],
           dinner: [
-            { food: "Quinoa salad (1 cup)", calories: 180, protein: 6, carbs: 32, fat: 3 },
-            { food: "Grilled paneer (100g)", calories: 265, protein: 18, carbs: 4, fat: 20 },
-            { food: "Vegetable soup", calories: 80, protein: 3, carbs: 15, fat: 1 }
+            { food: "Quinoa salad", quantity: "3/4 cup cooked (140g)", calories: 165, protein: 6, carbs: 30, fat: 3 },
+            { food: "Grilled paneer", quantity: "80g", calories: 212, protein: 15, carbs: 3, fat: 16 },
+            { food: "Vegetable soup", quantity: "1 bowl (250ml)", calories: 65, protein: 2, carbs: 12, fat: 1 }
           ],
           snacks: [
-            { food: "Apple with almonds (10)", calories: 150, protein: 5, carbs: 20, fat: 8 },
-            { food: "Greek yogurt (100g)", calories: 100, protein: 10, carbs: 6, fat: 4 }
+            { food: "Apple with peanut butter", quantity: "1 medium apple + 1 tbsp PB", calories: 180, protein: 4, carbs: 25, fat: 8 },
+            { food: "Greek yogurt", quantity: "100g plain", calories: 100, protein: 10, carbs: 6, fat: 4 }
           ]
         },
         "weight gain": {
           breakfast: [
-            { food: "Banana protein smoothie", calories: 350, protein: 25, carbs: 45, fat: 8 },
-            { food: "Whole wheat paratha with ghee", calories: 300, protein: 8, carbs: 40, fat: 12 },
-            { food: "Full fat milk (250ml)", calories: 150, protein: 8, carbs: 12, fat: 8 }
+            { food: "Banana protein smoothie", quantity: "2 bananas + 1 scoop protein + 250ml milk", calories: 420, protein: 28, carbs: 55, fat: 8 },
+            { food: "Whole wheat paratha with ghee", quantity: "2 medium parathas + 2 tsp ghee", calories: 380, protein: 10, carbs: 50, fat: 16 },
+            { food: "Full fat milk", quantity: "250ml", calories: 150, protein: 8, carbs: 12, fat: 8 }
           ],
           lunch: [
-            { food: "Basmati rice (1.5 cups)", calories: 330, protein: 6, carbs: 68, fat: 1 },
-            { food: "Dal with ghee", calories: 220, protein: 12, carbs: 30, fat: 6 },
-            { food: "Paneer butter masala", calories: 350, protein: 20, carbs: 12, fat: 25 },
-            { food: "Whole wheat roti (2)", calories: 160, protein: 6, carbs: 32, fat: 2 }
+            { food: "Basmati rice", quantity: "1.5 cups cooked (300g)", calories: 330, protein: 6, carbs: 68, fat: 1 },
+            { food: "Dal with ghee", quantity: "1 cup dal + 1 tsp ghee", calories: 250, protein: 14, carbs: 35, fat: 6 },
+            { food: "Paneer butter masala", quantity: "150g paneer in gravy", calories: 420, protein: 25, carbs: 15, fat: 30 },
+            { food: "Whole wheat roti", quantity: "2 medium rotis", calories: 160, protein: 6, carbs: 32, fat: 2 }
           ],
           dinner: [
-            { food: "Vegetable biryani", calories: 400, protein: 12, carbs: 65, fat: 12 },
-            { food: "Raita with fruits", calories: 120, protein: 6, carbs: 15, fat: 4 },
-            { food: "Kheer (small bowl)", calories: 200, protein: 6, carbs: 35, fat: 5 }
+            { food: "Vegetable biryani", quantity: "1.5 cups (300g)", calories: 450, protein: 12, carbs: 75, fat: 12 },
+            { food: "Raita with fruits", quantity: "1 cup (200g)", calories: 140, protein: 6, carbs: 18, fat: 5 },
+            { food: "Kheer", quantity: "1 small bowl (100g)", calories: 180, protein: 5, carbs: 30, fat: 5 }
           ],
           snacks: [
-            { food: "Mixed dry fruits (30g)", calories: 180, protein: 5, carbs: 15, fat: 12 },
-            { food: "Protein shake with banana", calories: 250, protein: 20, carbs: 30, fat: 4 }
+            { food: "Mixed dry fruits", quantity: "40g handful", calories: 240, protein: 6, carbs: 20, fat: 16 },
+            { food: "Protein shake with banana", quantity: "1 scoop + 1 banana + 200ml milk", calories: 320, protein: 25, carbs: 35, fat: 6 }
           ]
         },
         "maintenance": {
           breakfast: [
-            { food: "Vegetable poha", calories: 200, protein: 6, carbs: 35, fat: 5 },
-            { food: "Milk (200ml)", calories: 120, protein: 6, carbs: 10, fat: 6 },
-            { food: "Seasonal fruits", calories: 80, protein: 1, carbs: 20, fat: 0 }
+            { food: "Vegetable poha", quantity: "1 cup (150g)", calories: 220, protein: 6, carbs: 40, fat: 5 },
+            { food: "Low fat milk", quantity: "200ml", calories: 100, protein: 6, carbs: 10, fat: 3 },
+            { food: "Seasonal fruits", quantity: "1 medium fruit (150g)", calories: 80, protein: 1, carbs: 20, fat: 0 }
           ],
           lunch: [
-            { food: "Roti (2) with dal", calories: 280, protein: 14, carbs: 50, fat: 4 },
-            { food: "Vegetable curry", calories: 150, protein: 5, carbs: 25, fat: 5 },
-            { food: "Curd (150g)", calories: 90, protein: 6, carbs: 9, fat: 3 }
+            { food: "Whole wheat roti with dal", quantity: "2 rotis + 1 cup dal", calories: 292, protein: 16, carbs: 52, fat: 4 },
+            { food: "Vegetable curry", quantity: "1 cup (150g)", calories: 120, protein: 4, carbs: 20, fat: 4 },
+            { food: "Curd", quantity: "150g", calories: 90, protein: 6, carbs: 9, fat: 3 }
           ],
           dinner: [
-            { food: "Rice with sambar", calories: 250, protein: 8, carbs: 48, fat: 3 },
-            { food: "Stir-fried vegetables", calories: 100, protein: 3, carbs: 15, fat: 4 },
-            { food: "Buttermilk", calories: 60, protein: 3, carbs: 8, fat: 1 }
+            { food: "Rice with sambar", quantity: "1 cup rice + 1 cup sambar", calories: 280, protein: 10, carbs: 52, fat: 4 },
+            { food: "Stir-fried vegetables", quantity: "1 cup (120g)", calories: 80, protein: 3, carbs: 12, fat: 3 },
+            { food: "Buttermilk", quantity: "1 glass (200ml)", calories: 50, protein: 2, carbs: 6, fat: 1 }
           ],
           snacks: [
-            { food: "Fruits with nuts", calories: 120, protein: 4, carbs: 18, fat: 6 },
-            { food: "Herbal tea", calories: 5, protein: 0, carbs: 1, fat: 0 }
+            { food: "Fruits with nuts", quantity: "1 fruit + 10 almonds", calories: 140, protein: 5, carbs: 20, fat: 6 },
+            { food: "Herbal tea", quantity: "1 cup (240ml)", calories: 5, protein: 0, carbs: 1, fat: 0 }
           ]
         }
       },
       "non veg": {
         "weight loss": {
           breakfast: [
-            { food: "Egg white omelet (4 whites)", calories: 140, protein: 28, carbs: 2, fat: 0 },
-            { food: "Whole wheat toast (1)", calories: 80, protein: 3, carbs: 15, fat: 1 },
-            { food: "Green tea", calories: 2, protein: 0, carbs: 0, fat: 0 }
+            { food: "Egg white omelet", quantity: "4 egg whites + vegetables", calories: 140, protein: 28, carbs: 4, fat: 1 },
+            { food: "Whole wheat toast", quantity: "1 slice (25g)", calories: 80, protein: 3, carbs: 15, fat: 1 },
+            { food: "Green tea", quantity: "1 cup (240ml)", calories: 2, protein: 0, carbs: 0, fat: 0 }
           ],
           lunch: [
-            { food: "Grilled chicken breast (150g)", calories: 250, protein: 47, carbs: 0, fat: 5 },
-            { food: "Brown rice (0.5 cup)", calories: 110, protein: 2.5, carbs: 22, fat: 1 },
-            { food: "Steamed vegetables", calories: 80, protein: 3, carbs: 15, fat: 1 }
+            { food: "Grilled chicken breast", quantity: "120g", calories: 200, protein: 37, carbs: 0, fat: 4 },
+            { food: "Brown rice", quantity: "1/2 cup cooked (100g)", calories: 110, protein: 2, carbs: 22, fat: 1 },
+            { food: "Steamed vegetables", quantity: "1 cup (150g)", calories: 60, protein: 3, carbs: 12, fat: 0 }
           ],
           dinner: [
-            { food: "Grilled fish (150g)", calories: 200, protein: 40, carbs: 0, fat: 4 },
-            { food: "Quinoa (0.5 cup)", calories: 110, protein: 4, carbs: 20, fat: 2 },
-            { food: "Green salad", calories: 50, protein: 2, carbs: 10, fat: 0 }
+            { food: "Grilled fish (salmon)", quantity: "120g fillet", calories: 240, protein: 35, carbs: 0, fat: 10 },
+            { food: "Quinoa", quantity: "1/2 cup cooked (90g)", calories: 110, protein: 4, carbs: 20, fat: 2 },
+            { food: "Green salad", quantity: "1 large bowl (100g)", calories: 25, protein: 2, carbs: 5, fat: 0 }
           ],
           snacks: [
-            { food: "Boiled eggs (2)", calories: 140, protein: 12, carbs: 1, fat: 10 },
-            { food: "Fruits", calories: 80, protein: 1, carbs: 20, fat: 0 }
+            { food: "Boiled eggs", quantity: "2 whole eggs", calories: 140, protein: 12, carbs: 1, fat: 10 },
+            { food: "Fruits", quantity: "1 medium apple (150g)", calories: 80, protein: 0, carbs: 20, fat: 0 }
           ]
         },
         "weight gain": {
           breakfast: [
-            { food: "Egg paratha (2 eggs)", calories: 400, protein: 20, carbs: 35, fat: 20 },
-            { food: "Full fat milk", calories: 150, protein: 8, carbs: 12, fat: 8 },
-            { food: "Banana", calories: 105, protein: 1, carbs: 27, fat: 0 }
+            { food: "Egg paratha", quantity: "2 parathas with 2 eggs", calories: 520, protein: 22, carbs: 45, fat: 28 },
+            { food: "Full fat milk", quantity: "250ml", calories: 150, protein: 8, carbs: 12, fat: 8 },
+            { food: "Banana", quantity: "1 large (120g)", calories: 105, protein: 1, carbs: 27, fat: 0 }
           ],
           lunch: [
-            { food: "Chicken curry with rice", calories: 500, protein: 35, carbs: 55, fat: 15 },
-            { food: "Dal (1 cup)", calories: 180, protein: 12, carbs: 30, fat: 1 },
-            { food: "Curd (150g)", calories: 90, protein: 6, carbs: 9, fat: 3 }
+            { food: "Chicken curry with rice", quantity: "150g chicken + 1.5 cups rice", calories: 580, protein: 40, carbs: 65, fat: 15 },
+            { food: "Dal", quantity: "1 cup (200g)", calories: 180, protein: 12, carbs: 30, fat: 1 },
+            { food: "Curd", quantity: "150g", calories: 90, protein: 6, carbs: 9, fat: 3 }
           ],
           dinner: [
-            { food: "Fish curry with roti (3)", calories: 450, protein: 30, carbs: 45, fat: 18 },
-            { food: "Vegetable stir-fry", calories: 120, protein: 4, carbs: 15, fat: 6 },
-            { food: "Milk (250ml)", calories: 150, protein: 8, carbs: 12, fat: 8 }
+            { food: "Fish curry with roti", quantity: "120g fish + 3 rotis", calories: 500, protein: 35, carbs: 48, fat: 18 },
+            { food: "Vegetable stir-fry", quantity: "1 cup (150g)", calories: 120, protein: 4, carbs: 15, fat: 6 },
+            { food: "Milk", quantity: "250ml", calories: 150, protein: 8, carbs: 12, fat: 8 }
           ],
           snacks: [
-            { food: "Protein shake with peanut butter", calories: 350, protein: 25, carbs: 20, fat: 18 },
-            { food: "Chicken sandwich", calories: 300, protein: 25, carbs: 30, fat: 10 }
+            { food: "Protein shake with peanut butter", quantity: "1 scoop + 2 tbsp PB + 250ml milk", calories: 420, protein: 30, carbs: 25, fat: 22 },
+            { food: "Chicken sandwich", quantity: "2 slices bread + 80g chicken", calories: 380, protein: 28, carbs: 35, fat: 15 }
           ]
         },
         "maintenance": {
           breakfast: [
-            { food: "Egg sandwich (2 eggs)", calories: 300, protein: 18, carbs: 25, fat: 15 },
-            { food: "Milk (200ml)", calories: 120, protein: 6, carbs: 10, fat: 6 },
-            { food: "Orange juice", calories: 80, protein: 1, carbs: 20, fat: 0 }
+            { food: "Egg sandwich", quantity: "2 eggs + 2 slices bread", calories: 340, protein: 20, carbs: 30, fat: 16 },
+            { food: "Low fat milk", quantity: "200ml", calories: 100, protein: 6, carbs: 10, fat: 3 },
+            { food: "Orange juice", quantity: "150ml fresh", calories: 65, protein: 1, carbs: 16, fat: 0 }
           ],
           lunch: [
-            { food: "Chicken with rice", calories: 400, protein: 30, carbs: 45, fat: 10 },
-            { food: "Dal", calories: 150, protein: 10, carbs: 25, fat: 2 },
-            { food: "Mixed vegetables", calories: 100, protein: 3, carbs: 15, fat: 4 }
+            { food: "Chicken with rice", quantity: "100g chicken + 1 cup rice", calories: 380, protein: 28, carbs: 45, fat: 8 },
+            { food: "Dal", quantity: "3/4 cup (150g)", calories: 135, protein: 9, carbs: 22, fat: 1 },
+            { food: "Mixed vegetables", quantity: "1 cup (150g)", calories: 80, protein: 3, carbs: 15, fat: 2 }
           ],
           dinner: [
-            { food: "Fish curry", calories: 250, protein: 25, carbs: 8, fat: 12 },
-            { food: "Roti (2)", calories: 160, protein: 6, carbs: 32, fat: 2 },
-            { food: "Salad", calories: 50, protein: 2, carbs: 10, fat: 0 }
+            { food: "Fish curry", quantity: "100g fish in gravy", calories: 220, protein: 22, carbs: 8, fat: 12 },
+            { food: "Roti", quantity: "2 medium rotis", calories: 160, protein: 6, carbs: 32, fat: 2 },
+            { food: "Salad", quantity: "1 bowl (100g)", calories: 25, protein: 2, carbs: 5, fat: 0 }
           ],
           snacks: [
-            { food: "Fruits with nuts", calories: 120, protein: 4, carbs: 18, fat: 6 },
-            { food: "Boiled eggs (1)", calories: 70, protein: 6, carbs: 0, fat: 5 }
+            { food: "Fruits with nuts", quantity: "1 fruit + 8 almonds", calories: 135, protein: 4, carbs: 20, fat: 5 },
+            { food: "Boiled egg", quantity: "1 whole egg", calories: 70, protein: 6, carbs: 0, fat: 5 }
           ]
         }
       }
@@ -477,6 +476,7 @@ const DietPlanner = () => {
                             <TableHeader>
                               <TableRow>
                                 <TableHead>Food Item</TableHead>
+                                <TableHead>Quantity</TableHead>
                                 <TableHead>Calories</TableHead>
                                 <TableHead>Protein (g)</TableHead>
                                 <TableHead>Carbs (g)</TableHead>
@@ -487,6 +487,7 @@ const DietPlanner = () => {
                               {foods.map((food: any, index: number) => (
                                 <TableRow key={index}>
                                   <TableCell className="font-medium">{food.food}</TableCell>
+                                  <TableCell className="text-sm text-gray-600">{food.quantity}</TableCell>
                                   <TableCell>{food.calories}</TableCell>
                                   <TableCell>{food.protein}</TableCell>
                                   <TableCell>{food.carbs}</TableCell>
@@ -495,6 +496,7 @@ const DietPlanner = () => {
                               ))}
                               <TableRow className="bg-green-100">
                                 <TableCell className="font-bold">Total</TableCell>
+                                <TableCell className="font-bold">-</TableCell>
                                 <TableCell className="font-bold">
                                   {foods.reduce((sum: number, food: any) => sum + food.calories, 0)}
                                 </TableCell>
