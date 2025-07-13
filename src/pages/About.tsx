@@ -81,23 +81,22 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  FitLife India was born out of frustration. As young Indians trying to stay fit on a budget, 
-                  we realized that most fitness advice was either too expensive or completely disconnected 
-                  from our reality.
+                  FitLife India was born out of a genuine need to make fitness accessible and affordable 
+                  for every Indian, regardless of their background or budget constraints.
                 </p>
                 <p>
-                  Expensive gym memberships, imported superfoods, and complicated meal plans just didn't work 
-                  for someone living in a small apartment with a tight budget. We needed solutions that understood 
-                  our constraints—both financial and practical.
+                  We understand the unique challenges faced by young Indians - from small living spaces 
+                  to budget constraints, from family food preferences to busy work schedules. Our approach 
+                  is designed around these real-life situations.
                 </p>
                 <p>
-                  So we started experimenting. We found ways to work out in small spaces, discovered protein-rich 
-                  foods available at every local market, and created meal plans that actually fit our busy schedules 
-                  and Indian taste preferences.
+                  Through extensive research and community feedback, we've developed practical solutions 
+                  that actually work in Indian households. Our focus is on sustainable lifestyle changes 
+                  rather than quick fixes.
                 </p>
                 <p>
-                  What started as personal experimentation became a community of thousands of young Indians 
-                  supporting each other's fitness journeys. Today, FitLife India is that community's voice.
+                  Today, FitLife India serves thousands of users across the country, helping them achieve 
+                  their fitness goals with practical, culturally relevant advice and support.
                 </p>
               </div>
             </motion.div>

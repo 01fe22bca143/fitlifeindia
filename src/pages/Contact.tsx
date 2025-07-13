@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Send, MessageCircle, Clock } from "lucide-react";
+import { Send, MessageCircle, Clock, Mail } from "lucide-react";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -24,7 +24,24 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      // Save to localStorage (simulating database save)
+      // Create mailto link with all the form data
+      const subject = formData.subject || "Contact Form Submission from FitLife India";
+      const body = `Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the FitLife India contact form.`;
+
+      const mailtoLink = `mailto:pruthvikusugal2004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
+      
+      // Save to localStorage for backup
       const contactSubmissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
       const newSubmission = {
         ...formData,
@@ -34,7 +51,7 @@ const Contact = () => {
       contactSubmissions.push(newSubmission);
       localStorage.setItem('contactSubmissions', JSON.stringify(contactSubmissions));
       
-      toast.success("Message sent successfully! We'll get back to you within 24 hours.");
+      toast.success("Opening your email client to send the message!");
       setFormData({ name: "", email: "", subject: "", message: "" });
     } else {
       toast.error("Please fill in all required fields.");
@@ -92,6 +109,10 @@ const Contact = () => {
                   Send us a Message
                 </CardTitle>
                 <p className="text-gray-600">Fill out the form below and we'll get back to you soon</p>
+                <div className="flex items-center justify-center gap-2 text-sm text-gray-500 bg-blue-50 p-3 rounded-lg">
+                  <Mail className="w-4 h-4" />
+                  <span>Messages will be sent to: pruthvikusugal2004@gmail.com</span>
+                </div>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">

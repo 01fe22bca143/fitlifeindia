@@ -2,94 +2,79 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Search, Dumbbell } from "lucide-react";
-import { motion } from "framer-motion";
-import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Menu, X, Search, Dumbbell, Calculator } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
-  const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Blog", path: "/blog" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-  ];
-
-  const isActive = (path: string) => location.pathname === path;
   const isHomePage = location.pathname === "/";
 
-  const handleJoinFree = () => {
-    toast.success("Welcome to FitLife India! 🎉 You now have access to all our free content!");
-  };
-
-  const handleSearch = () => {
-    toast.info("Search feature coming soon! For now, visit our blog to explore all articles.");
-  };
-
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-lg"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-2 rounded-xl group-hover:scale-110 transition-transform duration-300">
-              <Dumbbell className="w-6 h-6 text-white" />
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="bg-gradient-to-r from-orange-500 to-pink-500 p-2 rounded-xl">
+              <Dumbbell className="h-6 w-6 text-white" />
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-purple-600 bg-clip-text text-transparent">
               FitLife India
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative font-medium transition-colors duration-300 ${
-                  isActive(item.path)
-                    ? "text-orange-600"
-                    : "text-gray-700 hover:text-orange-600"
-                }`}
-              >
-                {item.name}
-                {isActive(item.path) && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500"
-                  />
-                )}
-              </Link>
-            ))}
+            <Link
+              to="/"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Home
+            </Link>
+            <Link
+              to="/blog"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Blog
+            </Link>
+            <Link
+              to="/diet-planner"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full flex items-center gap-1"
+            >
+              <Calculator className="w-4 h-4" />
+              Diet Planner
+            </Link>
+            <Link
+              to="/about"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              About
+            </Link>
+            <Link
+              to="/contact"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              Contact
+            </Link>
           </div>
 
-          {/* Search & CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            {!isHomePage && (
-              <Button
-                variant="ghost"
-                size="sm"
-                className="rounded-full hover:bg-orange-50"
-                onClick={handleSearch}
-              >
-                <Search className="w-5 h-5 text-gray-600" />
+          {/* Search Bar and CTA - Hidden on homepage */}
+          {!isHomePage && (
+            <div className="hidden md:flex items-center space-x-4">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                <Input
+                  type="text"
+                  placeholder="Search articles..."
+                  className="pl-10 pr-4 py-2 w-64 rounded-full border border-gray-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 bg-white/80"
+                />
+              </div>
+              <Button className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                Join Community
               </Button>
-            )}
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white border-0 rounded-full px-6"
-              onClick={handleJoinFree}
-            >
-              Join Free
-            </Button>
-          </div>
+            </div>
+          )}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
@@ -97,65 +82,73 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-full"
+              className="text-gray-700"
             >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white/95 backdrop-blur-md rounded-2xl mt-2 p-4 shadow-xl border border-white/20"
-          >
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 py-4">
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`font-medium py-2 px-4 rounded-xl transition-colors ${
-                    isActive(item.path)
-                      ? "text-orange-600 bg-orange-50"
-                      : "text-gray-700 hover:text-orange-600 hover:bg-orange-50"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="flex items-center space-x-3 pt-2">
-                {!isHomePage && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex-1 rounded-full hover:bg-orange-50"
-                    onClick={handleSearch}
-                  >
-                    <Search className="w-5 h-5 mr-2" />
-                    Search
+              <Link
+                to="/"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/blog"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                to="/diet-planner"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2 flex items-center gap-2"
+                onClick={() => setIsOpen(false)}
+              >
+                <Calculator className="w-4 h-4" />
+                Diet Planner
+              </Link>
+              <Link
+                to="/about"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/contact"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+              {!isHomePage && (
+                <div className="px-4 pt-4 border-t border-gray-200">
+                  <div className="relative mb-4">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+                    <Input
+                      type="text"
+                      placeholder="Search articles..."
+                      className="pl-10 pr-4 py-2 w-full rounded-full border border-gray-200 focus:border-orange-400 bg-white/80"
+                    />
+                  </div>
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white px-6 py-2 rounded-full font-semibold">
+                    Join Community
                   </Button>
-                )}
-                <Button
-                  size="sm"
-                  className="flex-1 bg-gradient-to-r from-orange-500 to-pink-500 text-white border-0 rounded-full"
-                  onClick={handleJoinFree}
-                >
-                  Join Free
-                </Button>
-              </div>
+                </div>
+              )}
             </div>
-          </motion.div>
+          </div>
         )}
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

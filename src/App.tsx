@@ -11,6 +11,7 @@ import BlogList from "./pages/BlogList";
 import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import DietPlanner from "./pages/DietPlanner";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="/blog/:id" element={<BlogPost />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/diet-planner" element={<DietPlanner />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
