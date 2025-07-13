@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -24,37 +23,64 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      // Create mailto link with all the form data
+      // Create a more detailed email body
       const subject = formData.subject || "Contact Form Submission from FitLife India";
-      const body = `Name: ${formData.name}
-Email: ${formData.email}
-Subject: ${formData.subject}
+      const body = `Hello,
 
-Message:
+You have received a new message from your FitLife India website contact form:
+
+NAME: ${formData.name}
+EMAIL: ${formData.email}
+SUBJECT: ${formData.subject || 'No subject provided'}
+
+MESSAGE:
 ${formData.message}
 
 ---
-This message was sent from the FitLife India contact form.`;
+This message was sent from the FitLife India contact form.
+Please reply directly to ${formData.email}
 
+Best regards,
+FitLife India Contact System`;
+
+      // Create the mailto link with proper encoding
       const mailtoLink = `mailto:pruthvikusugal2004@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
-      // Open default email client
-      window.location.href = mailtoLink;
-      
-      // Save to localStorage for backup
-      const contactSubmissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-      const newSubmission = {
-        ...formData,
-        id: Date.now(),
-        submittedAt: new Date().toISOString()
-      };
-      contactSubmissions.push(newSubmission);
-      localStorage.setItem('contactSubmissions', JSON.stringify(contactSubmissions));
-      
-      toast.success("Opening your email client to send the message!");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      try {
+        // Open the user's default email client
+        window.open(mailtoLink);
+        
+        // Also try using window.location.href as a fallback
+        setTimeout(() => {
+          window.location.href = mailtoLink;
+        }, 1000);
+        
+        // Save to localStorage for backup
+        const contactSubmissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+        const newSubmission = {
+          ...formData,
+          id: Date.now(),
+          submittedAt: new Date().toISOString()
+        };
+        contactSubmissions.push(newSubmission);
+        localStorage.setItem('contactSubmissions', JSON.stringify(contactSubmissions));
+        
+        toast.success("Email client opened! Please send the email from your email app.");
+        
+        // Clear the form
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        
+        // Additional helpful message
+        setTimeout(() => {
+          toast.info("If your email client didn't open, please copy the message and email manually to pruthvikusugal2004@gmail.com");
+        }, 3000);
+        
+      } catch (error) {
+        console.error('Error opening email client:', error);
+        toast.error("Unable to open email client. Please email directly to pruthvikusugal2004@gmail.com");
+      }
     } else {
-      toast.error("Please fill in all required fields.");
+      toast.error("Please fill in all required fields (Name, Email, and Message).");
     }
   };
 
@@ -109,9 +135,9 @@ This message was sent from the FitLife India contact form.`;
                   Send us a Message
                 </CardTitle>
                 <p className="text-gray-600">Fill out the form below and we'll get back to you soon</p>
-                <div className="flex items-center justify-center gap-2 text-sm text-gray-500 bg-blue-50 p-3 rounded-lg">
+                <div className="flex items-center justify-center gap-2 text-sm text-blue-700 bg-blue-50 p-3 rounded-lg font-medium">
                   <Mail className="w-4 h-4" />
-                  <span>Messages will be sent to: pruthvikusugal2004@gmail.com</span>
+                  <span>Messages will be sent via your email client to: pruthvikusugal2004@gmail.com</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -184,6 +210,13 @@ This message was sent from the FitLife India contact form.`;
                     <Send className="w-5 h-5 mr-2" />
                     Send Message
                   </Button>
+                  
+                  <div className="text-center text-sm text-gray-600 bg-yellow-50 p-3 rounded-lg">
+                    <strong>Note:</strong> This will open your email client to send the message. 
+                    If it doesn't work, please copy your message and email directly to: 
+                    <br />
+                    <span className="font-mono text-blue-600">pruthvikusugal2004@gmail.com</span>
+                  </div>
                 </form>
               </CardContent>
             </Card>
