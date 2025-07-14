@@ -51,12 +51,6 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Link
-              to="/contact"
-              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              Contact
-            </Link>
           </div>
 
           {/* Search Bar and CTA - Hidden on homepage */}
@@ -121,13 +115,6 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 About
-              </Link>
-              <Link
-                to="/contact"
-                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
               </Link>
               {!isHomePage && (
                 <div className="px-4 pt-4 border-t border-gray-200">
