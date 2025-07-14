@@ -12,6 +12,9 @@ import BlogPost from "./pages/BlogPost";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import DietPlanner from "./pages/DietPlanner";
+import BudgetFoodOptimizer from "./pages/BudgetFoodOptimizer";
+import WeatherWorkouts from "./pages/WeatherWorkouts";
+import SmartGoalPredictor from "./pages/SmartGoalPredictor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +35,9 @@ const App = () => (
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/diet-planner" element={<DietPlanner />} />
+              <Route path="/budget-optimizer" element={<BudgetFoodOptimizer />} />
+              <Route path="/weather-workouts" element={<WeatherWorkouts />} />
+              <Route path="/goal-predictor" element={<SmartGoalPredictor />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

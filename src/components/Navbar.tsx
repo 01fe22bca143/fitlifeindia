@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Menu, X, Search, Dumbbell, Calculator } from "lucide-react";
+import { Menu, X, Search, Dumbbell, Calculator, TrendingUp, CloudRain, Target } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +44,27 @@ const Navbar = () => {
             >
               <Calculator className="w-4 h-4" />
               Diet Planner
+            </Link>
+            <Link
+              to="/budget-optimizer"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full flex items-center gap-1"
+            >
+              <TrendingUp className="w-4 h-4" />
+              Budget Optimizer
+            </Link>
+            <Link
+              to="/weather-workouts"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full flex items-center gap-1"
+            >
+              <CloudRain className="w-4 h-4" />
+              Weather Workouts
+            </Link>
+            <Link
+              to="/goal-predictor"
+              className="relative text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-orange-500 after:transition-all after:duration-300 hover:after:w-full flex items-center gap-1"
+            >
+              <Target className="w-4 h-4" />
+              Goal Predictor
             </Link>
             <Link
               to="/about"
@@ -108,6 +129,30 @@ const Navbar = () => {
               >
                 <Calculator className="w-4 h-4" />
                 Diet Planner
+              </Link>
+              <Link
+                to="/budget-optimizer"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2 flex items-center gap-2"
+                onClick={() => setIsOpen(false)}
+              >
+                <TrendingUp className="w-4 h-4" />
+                Budget Optimizer
+              </Link>
+              <Link
+                to="/weather-workouts"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2 flex items-center gap-2"
+                onClick={() => setIsOpen(false)}
+              >
+                <CloudRain className="w-4 h-4" />
+                Weather Workouts
+              </Link>
+              <Link
+                to="/goal-predictor"
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-300 font-medium px-4 py-2 flex items-center gap-2"
+                onClick={() => setIsOpen(false)}
+              >
+                <Target className="w-4 h-4" />
+                Goal Predictor
               </Link>
               <Link
                 to="/about"
