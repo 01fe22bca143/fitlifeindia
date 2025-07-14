@@ -157,9 +157,9 @@ const Hero = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto"
         >
           {[
-            { number: "50+", label: "Healthy Recipes", icon: "🍽️" },
-            { number: "25+", label: "Workout Plans", icon: "💪" },
-            { number: "1000+", label: "Success Stories", icon: "🏆" }
+            { number: "3+", label: "Featured Articles", icon: "📚" },
+            { number: "1", label: "Diet Planner Tool", icon: "🥗" },
+            { number: "5", label: "Blog Pages", icon: "📝" }
           ].map((stat, index) => (
             <motion.div 
               key={index} 

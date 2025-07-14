@@ -1,7 +1,7 @@
 
 import Hero from "@/components/Hero";
 import FeaturedPosts from "@/components/FeaturedPosts";
-import Newsletter from "@/components/Newsletter";
+import Features from "@/components/Features";
 import { motion } from "framer-motion";
 
 const Index = () => {
@@ -15,7 +15,7 @@ const Index = () => {
       >
         <FeaturedPosts />
       </motion.div>
-      <Newsletter />
+      <Features />
     </div>
   );
 };
