@@ -1,19 +1,16 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
 export default defineConfig({
   base: "/fitlifeindia/",
   plugins: [react()],
 
   optimizeDeps: {
-    // Include lovable-tagger here to pre-bundle it
     include: ["lovable-tagger"],
   },
 
   ssr: {
-    // Mark lovable-tagger as external so esbuild handles it properly in SSR build
     noExternal: ["lovable-tagger"],
   },
 
@@ -21,5 +18,9 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "src"),
     },
+  },
+
+  build: {
+    outDir: "docs", // Build output to docs folder for GitHub Pages on main branch
   },
 });
