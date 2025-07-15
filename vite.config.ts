@@ -3,21 +3,23 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  base: '/fitlife-india/', // 👈 this is essential for GitHub Pages
+export default defineConfig({
+  base: "/fitlifeindia/",
+  plugins: [react()],
 
-  server: {
-    host: "::",
-    port: 8080,
+  optimizeDeps: {
+    // Include lovable-tagger here to pre-bundle it
+    include: ["lovable-tagger"],
   },
-  plugins: [
-    react(),
-    mode === 'development' && componentTagger(),
-  ].filter(Boolean),
+
+  ssr: {
+    // Mark lovable-tagger as external so esbuild handles it properly in SSR build
+    noExternal: ["lovable-tagger"],
+  },
+
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "src"),
     },
   },
-}));
+});
