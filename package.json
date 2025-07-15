@@ -1,5 +1,6 @@
 {
   "name": "vite_react_shadcn_ts",
+  "homepage": "https://01fe22bca143.github.io/fitlife-india",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -79,6 +80,6 @@
     "tailwindcss": "^3.4.11",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.19"
   }
 }
